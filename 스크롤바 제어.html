@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jquery-1.12.4.min.js"></script>
+    <script src="script/jquery-ui.min.js"></script>
+    <script lang="java">
+        $(function(){
+            $(".bar").draggable({
+                axis :"x",
+                containment:".scroll_bar"
+            })//
+            $(".bar").bind("drag", function(){
+                img_move();
+            })//
+
+            function img_move(){
+
+                // 533 400  bar50 400- 50= 350
+                
+                var bar_left = parseInt( $(".bar").css("left") );
+                console.log( bar_left);
+
+                var pos = (bar_left * - 133) / 350  + "px";
+                console.log(pos);
+
+                $(".img_area2").css({left:pos})
+
+
+
+
+            }//
+
+
+        })//jquery
+    </script>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}  
+        .wrap{}
+        .wrap h1{
+            text-align: center;
+            line-height: 2;
+        }
+        .box{
+            width: 400px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .img_area{
+            height: 200px;
+            overflow: auto;
+        }
+
+        .img_area::-webkit-scrollbar{
+            width: 10px;
+        }
+        .img_area::-webkit-scrollbar-thumb{
+            background-color: #2f3542;
+            border-radius: 10px;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+        .img_area::-webkit-scrollbar-track{
+            background-color: red;
+            border-radius: 10px;
+            box-shadow: inset 0 0 5px #fff;
+        }
+
+
+        .box2{
+            width: 400px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        .img_area2{
+            height: 360px;
+            position: relative;
+        }
+        
+        .scroll_bar{
+            width: 100%;
+            height: 20px;
+            background-color: #777;
+        }
+        .bar{
+            width: 50px;height: 20px;
+            background-color: red;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>Scroll Bar</h1>
+
+        <div class="box">
+            <div class="img_area">
+                <img src="images/slide1.533_360.jpg" alt="">
+            </div><!-- img_area -->
+        </div><!-- box -->
+
+
+        <div class="box2">
+
+            <div class="img_area2">
+                <img src="images/slide1.533_360.jpg" alt="">
+            </div><!-- img_area -->
+
+            <div class="scroll_bar">
+                <div class="bar"></div>
+            </div>
+        </div>
+    </div><!-- wrap -->
+
+
+
+    
+</body>
+</html>

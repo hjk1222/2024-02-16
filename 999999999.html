@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script/jquery-1.12.4.min.js"></script>
+
+    <script lang="java">
+        $(function(){
+
+            $(".close").click(function(){
+                $(".layer").hide()
+            })//
+
+            $(".click").click(function(){
+                $(".layer").show()
+})//
+
+
+            $(".pdf").click(function(){
+                $(".iflay").show()
+            })
+
+            $(".ifclose").click(function(){
+                $(".iflay").hide()
+            })
+
+
+
+        })//
+
+    </script>
+    <style type="text/css">
+
+        *{margin: 0;padding: 0;}
+        ul, li{list-style:none;}
+
+        section{
+            height: 100vh;
+            background-color: pink;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .layer{
+            width: 80%;
+            height: 800px;
+            border: 5px solid black;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 5;
+        }
+
+        .layer .fix{
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 50px;
+            background-color: white;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;            
+            z-index: 6;
+
+        }
+
+        .layer .fix .close{
+            padding: 0 20px;
+        }
+
+        .layer_pop{
+           
+            width: 100%;
+            height: 800px;
+            overflow-y: scroll;
+        }
+        .layer_pop .list{}
+
+        .layer_pop .list li{
+            width: 100%;
+            height: 800px;
+            text-align: center;
+            padding-top: 150px;
+            font-size: 100px;
+            background-color: wheat;
+        }
+
+
+        .pdfbox{
+            width: 500px;
+            height: 300px;
+            background-color: red;
+            text-align: center;
+            line-height: 300px;
+            cursor: pointer;
+            margin: 100px auto;
+        }
+
+        .iflay{
+            position: relative;
+            width: 1600px;
+            margin: 0 auto;
+            height: 800px;
+            display: none;
+        }
+        .pdfimg{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 50;
+        }
+
+        .ifclose{
+            position: absolute;
+            z-index: 1001;
+            right: 120px;
+            top: 20px;
+            cursor: pointer;
+            background: transparent;
+            border: none;        
+            color: white;
+        }
+
+
+    </style>
+</head>
+<body>
+    <section><button class="click">버튼</button></section>
+
+
+        <div class="layer">
+            <div class="fix">
+                <button class="close">닫기</button>
+            </div>
+
+            <div class="layer_pop">
+                <ul class="list">
+                    <li>1</li>
+                    <li>2</li>
+                    <li>3</li>
+                    <li>4</li>
+                    <li>5</li>
+                    <li>6</li>
+                    <li>7</li>
+                    <li>8</li>
+                    <li>9</li>
+                    <li>10</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div class="pdfbox">
+            <p class="pdf">PDF 포트폴리오 보러가기</p>                        
+        </div>
+
+        <div class="iflay">
+            <iframe src="전연주.pdf" width="1600" height="800" class="pdfimg"></iframe>
+            <button class="ifclose">X</button>
+
+        </div>
+
+
+
+</body>
+</html>

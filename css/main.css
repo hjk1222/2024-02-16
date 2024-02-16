@@ -1,0 +1,363 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    background: white;
+    color: #333;
+    font-size: 14px;
+    font-family: "돋움";
+}
+
+img {
+    max-width: 100%;
+    vertical-align: top;
+}
+
+table{border-collapse: collapse;}
+
+
+#wrap{
+    width: 100%;
+    height: 700px;    
+}
+
+.top{
+    width: 100%;
+    height: 600px;
+    display: flex;
+}
+.header{
+    width: 200px;
+    height: 600px;
+    background-color: #ddd;
+}
+
+.logo{
+    width: 100%;
+    height: 100px;
+    /* background-color: red; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.nav{
+    width: 180px;
+    margin: 10px auto 30px;
+    border-top: 1px dotted #333;
+    border-bottom: 1px dotted #333;
+    padding: 10px 0;
+}
+
+.main{}
+.main > li{
+    position: relative;
+    margin-bottom: 5px;
+}
+.main > li> a{
+    display: block;
+    background-color: #ccc;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+
+.main > li:hover> a{
+    background: #333;color: white;
+}
+
+.sub{
+    position: absolute;
+    left: 180px;
+    top: 0;
+    width: 150px;
+    display: none;
+    z-index: 50;
+}
+.sub li{}
+.sub li a{
+    display: block;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #fff;
+}
+.sub li a:hover{
+    background: #333;color: white;
+}
+
+
+.spotmenu{text-align: center;}
+.spotmenu a{
+    display: inline-block;
+    padding: 0 5px;
+    border-left: 1px solid #777;
+}
+.spotmenu a:first-child{
+    border-left: none;
+}
+.spotmenu a:hover{text-decoration: underline;}
+.contents{
+    width: 400px;
+    height: 600px;
+    /* background-color: #ddd; */
+}
+
+.banner{
+    height: 120px;
+    background-color:beige;
+    display: flex;
+    padding: 10px;
+    align-items: center;
+}
+.b_1{width: 100px; margin-right: 10px;}
+.b_2{}
+.b_2 h3{margin-bottom: 5px;}
+.b_2 p{}
+.b_3{}
+
+
+.notice{
+    height: 230px;
+    background: #eee;
+    padding: 10px;
+    border-top: 1px dotted #333;
+}
+.notice h2{
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    background-color: green;
+    color: white;
+}
+.notice ul{
+    border-top: 3px solid green;
+    padding: 10px;
+    height: 197px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* background-color: green; */
+}
+.notice ul li{
+    display: flex;
+    border-bottom: 1px dotted #333;
+}
+.notice ul li a{
+    width: 75%;
+    white-space: nowrap ;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.notice ul li span{
+    width: 25%;
+    text-align: right;
+}
+
+
+
+.gallery{
+    height: 250px;
+    background-color: azure;
+    padding: 10px;
+    border-top: 1px dotted #333;
+}
+
+.gallery h2{
+    width: 100px;
+    height: 30px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 30px;
+    background-color: orange;
+    color: white;
+}
+.gallery ul{
+    border-top: 3px solid orange;
+    padding: 10px 0;    
+    display: flex;    
+    justify-content: space-between;
+    text-align: center;
+
+}
+.gallery ul li{}
+.gallery ul li a{}
+.gallery ul li a img{
+    border-radius: 10px;
+    border: 2px solid orange;
+    opacity: 0.8;
+    display: block;
+}
+.gallery ul li a img:hover{    
+    border: 2px solid orangered;
+    opacity: 1;
+}
+
+.gallery ul li a span{
+    display: block;
+    margin-top: 5px;
+}
+.img_slide{
+    width: calc(100% - 200px - 400px);
+    height: 600px;
+    background-color: #ccc;
+    overflow: hidden;
+    position: relative;
+}
+
+.top_move{
+    position: absolute;
+    left: 0;top: 0;
+    width: 100%;
+}
+.top_move li{
+    width: 100%;
+    height: 600px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.top_move li a{
+    display: block;
+    height: 100%;
+    position: relative;
+}
+.top_move li a .m_txt{
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    width: 50%;
+    line-height: 100px;
+    background-color: rgba(255,255,255,0.6);
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.top_move li.m1 {
+    background-image: url("../images/slide1.533_360.jpg");
+    
+}
+.top_move li.m2 {
+    background-image: url("../images/slide2.533_360.jpg");
+}
+.top_move li.m3 {
+    background-image: url("../images/slide3.534_360.jpg");
+}
+
+.top_move li.m1 a .m_txt{
+    transform: translate(0, -50%);
+}
+.top_move li.m2 a .m_txt{
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.top_move li.m3 a .m_txt{
+   right: 0;;
+    transform: translate(0, -50%);
+}
+
+
+
+
+
+.footer{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    border-bottom: 1px dotted #333;
+}
+
+.f_logo{
+    width: 200px;
+    height: 100px;
+    /* background-color: #ccc; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.copy{
+    width: calc(100% - 200px - 300px);
+    height: 100px;
+    /* background-color: #777; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left:1px dotted #333 ;
+    padding: 0 20px;
+
+}
+
+.sns{
+    width: 300px;
+    height: 100px;
+    /* background-color: #999; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    border-left:1px dotted #333 ;
+    
+}
+
+.sns img:hover{
+    filter: sepia();
+}
+
+
+.popup {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 10px groove goldenrod;
+    padding: 20px;
+    border-radius: 20px ;
+    display: none;
+}
+
+.popup h3 {
+    line-height: 50px;
+    font-size: 20px;
+    text-align: center;
+    border-bottom: double 5px goldenrod;
+}
+
+.popup p {
+    padding-top: 20px;
+    text-align: justify;
+    line-height: 1.5;
+}
+
+.popup .close {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 5px 20px;
+    cursor: pointer;
+}
